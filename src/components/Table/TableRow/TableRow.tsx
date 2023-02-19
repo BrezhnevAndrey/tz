@@ -123,7 +123,7 @@ export function TableRow({
             <Button
               img={<Sheet />}
               onClick={handleCreateBtnClick}
-              disabled={status === "pending"}
+              disabled={status === "pending" || isEditing}
             />
 
             {!isEditing && (
