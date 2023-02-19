@@ -1,0 +1,37 @@
+.btnContainer
+    position: relative
+    display: inline-block
+    min-width: 42px
+    line-height: 0
+
+.btnWrapper
+    display: inline-block
+    position: relative
+    line-height: 0
+    button
+        position: relative
+        z-index: 10
+        &:not(:last-child)
+            margin-right: 10px
+
+    &::after
+        content: " "
+        display: inline-block
+        position: absolute
+        left: -6px
+        top: -6px
+        right: -6px
+        bottom: -6px
+        border-radius: 6px
+        background-color: $darkGrey
+        opacity: 0
+    &:hover
+        .invisibleWrapper
+            opacity: 1
+        &::after
+            opacity: 1
+
+.invisibleWrapper
+    display: inline-block
+    line-height: 0
+    opacity: 0

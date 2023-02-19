@@ -1,0 +1,46 @@
+.table
+    width: 100%
+    border: 1px solid $darkGrey
+    border-left: none
+    border-top: none
+    border-bottom: none
+    border-collapse: collapse
+    tr
+        position: relative
+        text-align: left
+        &::after
+            content: ""
+            position: absolute
+            display: inline-block
+            left: 1%
+            bottom: 1%
+            height: 1px
+            width: 98%
+            border-bottom: 1px solid $darkGrey
+
+    .caption
+        width: fit-content
+        text-align: start
+        padding: 11px 15px
+        border-right: 1px solid $darkGrey
+        @include text($white, 18px)
+    thead
+        tr
+            border-top: 1px solid $darkGrey
+        th
+            padding: 10px
+            @include text($grey)
+            border: none
+            &:first-child
+                max-width: 5%
+            &:nth-child(n+3)
+                width: 12.5%
+
+    tbody
+        tr
+            &:last-child
+                &::after
+                    border-bottom: unset
+        td
+            padding: 21px 12px
+            @include text

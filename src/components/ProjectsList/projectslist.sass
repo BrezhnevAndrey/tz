@@ -1,0 +1,52 @@
+.listContainer
+    min-width: 240px
+
+.list
+    visibility: hidden
+    list-style: none
+    margin: 0px
+    padding: 0px
+
+.list--open
+    visibility: visible
+
+.titleWrapper
+    position: relative
+    display: flex
+    flex-direction: column
+    padding: 7.5px 30px 7px 20px
+    border-bottom: 1px solid $darkGrey
+    &:hover
+        cursor: pointer
+    &::after
+        content: ' '
+        display: inline-block
+        position: absolute
+        top: 50%
+        right: 5%
+        transform: translate(0, -50%) rotate(45deg)
+        width: 6px
+        height: 6px
+        border-bottom: 2px solid $white
+        border-right: 2px solid $white
+
+.item
+    display: flex
+    align-items: center
+    @include text
+    padding: 5px 20px
+    svg
+        margin-right: 10px
+    &:hover
+        cursor: pointer
+        background-color: $grey
+
+.titleWrapper--open
+    &::after
+        transform: translate(0, -50%) rotate(225deg)
+
+.listTitle
+    @include text($grey, 14px)
+
+.listSubtitle
+    @include text($grey, 10px)
